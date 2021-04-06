@@ -14,6 +14,11 @@ h1,p{
   margin: 0.5rem;
 }
 
+h2{
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
 .navbar{
   display: flex;
   justify-content: space-around;
@@ -44,6 +49,7 @@ h1,p{
 }
 
 .shop-btn{
+  margin-top: 15px;
   height: 40px;
   border: 1px solid red;
   border-radius: 10px;
@@ -83,6 +89,105 @@ h1,p{
   max-height: 400px;
 }
 
+.cloth-item{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  max-width: 700px;
+  margin: 10px auto;
+  background: #f7e3ce;
+  padding: 10px;
+  border: 1px solid  #f7e3ce;
+  border-radius: 10px;
+}
+
+.cloth-item-desc{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.add-to-cart-btn{
+  height: 40px;
+  margin: 20px 0;
+  border: 1px solid green;
+  border-radius: 10px;
+  padding: 10px;
+  letter-spacing: 1px;
+  background: green;
+  color: white;
+}
+
+.add-to-cart-btn:hover{
+  background: darkgreen;
+  cursor: pointer;
+}
+
+.clicked-item{
+  margin: 10px 0;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:  lightgreen;
+  border: 1px solid lightgreen;
+  border-radius: 10px;
+}
+
+.view-cart-btn{
+  height: 30px;
+  margin-top: 8px;
+  border: 1px solid green;
+  border-radius: 10px;
+  background: green;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.view-cart-btn:hover{
+  background: darkgreen;
+  cursor: pointer;
+}
+
+.cancel-btn{
+  height: 30px;
+  border: 1px solid #383333;
+  background: #383333;
+  border-radius: 10px;
+  color: white;
+}
+
+.cancel-btn:hover{
+  background: #1f1919;
+  cursor: pointer;
+}
+
+.cart-container{
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.cart-container img{
+  height: 25vh;
+  width: 90%;
+  margin-left: 10px;
+}
+
+.cart-items{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.quantity{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 img{
   display: block;
