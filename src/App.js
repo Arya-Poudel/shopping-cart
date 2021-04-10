@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
@@ -14,7 +14,7 @@ function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
 
   const addItemToCart = (item) =>{
-      setShoppingCart([...shoppingCart, item])
+    setShoppingCart([...shoppingCart, item])
   }
 
   const removeItemFromCart = (itemid) => {
@@ -30,10 +30,11 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/shop" component={Shop} />
             <Route exact path="/shop/:id" 
-                   render={(routeProps) =>(
+                   render = {(routeProps) =>(
                      <ShopItems 
                               dressId = {routeProps.match.params.id}
                               addItemToCart={addItemToCart}
+                              shoppingCart={shoppingCart}
                       />
                     )}
               />

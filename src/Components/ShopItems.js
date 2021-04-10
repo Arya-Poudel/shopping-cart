@@ -3,22 +3,27 @@ import {Link} from 'react-router-dom';
 import Dresses from './Data';
 
 
-const ShopItem = ({dressId, addItemToCart}) =>{
+const ShopItem = ({dressId, addItemToCart, shoppingCart}) =>{
 
 	const item = {
-			id: dressId,
+			id: shoppingCart.length,
 			src : Dresses[dressId].src,
 			name : Dresses[dressId].name,
 			price : Dresses[dressId].price,
+			quantity: 1,
 		}
 
 	const [clickedItem, setClickedItem] = useState(false);
 
-	// const []
+	const [isInCart, setIsInCart] = useState(false);
 
 	const handleBtnClick = (e) =>{
-		setClickedItem(true);
-		addItemToCart(item);
+		  if (shoppingCart.some(e=>e.name === item.name)) {
+	            setIsInCart(true);
+      	  }else{
+      	  		setClickedItem(true);
+         		addItemToCart(item);
+      	  }
 	}
 
 	return (
@@ -36,6 +41,13 @@ const ShopItem = ({dressId, addItemToCart}) =>{
 				 		<button className="view-cart-btn">View Cart</button> 
 				 	</Link>
 			  </div>
+			}
+			{isInCart && <div className="clicked-item">
+					Item is already in cart.
+					<Link to="/cart">
+						<button className="view-cart-btn">View Cart</button>
+					</Link>
+			   </div>
 			}
 			<Link to="/shop">
 				<button className="cancel-btn" >Go back</button>
