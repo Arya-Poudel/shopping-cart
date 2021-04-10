@@ -1,5 +1,7 @@
 import React from "react";
 import CartItems from './CartItems';
+import { Link } from "react-router-dom";
+
 
 const Cart = ({shoppingCart, addItemToCart, removeItemFromCart}) =>{
 
@@ -15,8 +17,12 @@ const Cart = ({shoppingCart, addItemToCart, removeItemFromCart}) =>{
 			/>
 		))}
 		<p>Total: </p>
-		<button>Checkout</button>
-		<button>Back to shop</button>
+		<Link to="/checkout"> 
+			<button>Checkout</button>
+		</Link>
+		<Link to="/shop">
+			<button>Back to shop</button>
+		</Link>
 		</div>
 	);
 };

@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import './App.css';
+import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Shop from './Components/Shop';
 import Cart from './Components/Cart';
 import ShopItems from './Components/ShopItems';
+import Checkout from './Components/Checkout';
 
 
 function App() {
@@ -16,20 +18,14 @@ function App() {
   }
 
   const removeItemFromCart = (itemid) => {
-    shoppingCart.splice(itemid,1);
-    console.log(shoppingCart);
-    setShoppingCart(shoppingCart);
+    setShoppingCart(shoppingCart.filter(shopItems => shopItems.id !== itemid));
   }
 
 
   return (
     <div className="App">
      <BrowserRouter>
-        <nav className="navbar">
-          <Link to="/">Home</Link>
-          <Link to="/shop">Shop</Link>
-          <Link to="/cart">Cart({shoppingCart.length})</Link>
-        </nav>
+        <Navbar shoppingCart={shoppingCart} />
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/shop" component={Shop} />
@@ -50,6 +46,7 @@ function App() {
                        />
                     )}
               />
+              <Route exact path="/checkout" component={Checkout} />
          </Switch>
       </BrowserRouter>
     </div>

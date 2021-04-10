@@ -32,7 +32,9 @@ const ShopItem = ({dressId, addItemToCart}) =>{
 			}
 			{clickedItem && <div className="clicked-item">
 				 	Your item has been added to cart.
-				 	<button className="view-cart-btn">View Cart</button> 
+				 	<Link to="/cart">
+				 		<button className="view-cart-btn">View Cart</button> 
+				 	</Link>
 			  </div>
 			}
 			<Link to="/shop">
