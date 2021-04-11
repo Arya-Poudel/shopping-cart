@@ -21,11 +21,12 @@ const Cart = ({shoppingCart, addItemToCart, removeItemFromCart}) =>{
 		if (shoppingCart.length === 0) {
 			setIsEmpty(true);
 		}
+		//eslint-disable-next-line
 	}, [shoppingCart])
 
 	return (
 		<div className="cart-container">
-		<h1>Cart</h1>
+		<h1 className="cart-topic">Your Cart</h1>
 		{shoppingCart.map((cartItem) => (
 			<CartItems 
 					  key={cartItem.name}
@@ -35,22 +36,21 @@ const Cart = ({shoppingCart, addItemToCart, removeItemFromCart}) =>{
 			/>
 		))}
 
-		{isEmpty && <div>
-			<h2>Cart is empty</h2>
-		</div>
+		{isEmpty &&
+			<h2 className="empty-cart">Cart is empty</h2>
 		}
 
 		{!isEmpty && <div>
-			<p>Total:{total}</p>
+			<p className="total">Total: Nrs.{total}</p>
 			<Link to="/checkout"> 
-				<button>Checkout</button>
+				<button className="checkout-btn">Checkout</button>
 			</Link>
 		</div>
 		}
 		
 
 		<Link to="/shop">
-			<button>Back to shop</button>
+			<button className="cancel-btn">Back to shop</button>
 		</Link>
 		</div>
 	);

@@ -31,8 +31,8 @@ const ShopItem = ({dressId, addItemToCart, shoppingCart}) =>{
 	  <img src={item.src} alt={item.name} />
 	  <div className="cloth-item-desc">
 			<h2>{item.name} </h2>
-			<h2>Nrs.{item.price} </h2>
-			{!clickedItem && 
+			<h3>Nrs.{item.price} </h3>
+			{(!clickedItem && !isInCart) && 
 				<button className="add-to-cart-btn" onClick={handleBtnClick}>Add to Cart</button>
 			}
 			{clickedItem && <div className="clicked-item">

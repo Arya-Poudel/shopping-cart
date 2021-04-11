@@ -3,10 +3,10 @@ import React from "react";
 
 const Navbar = ({shoppingCart}) =>{
 	return(
-	<nav className="navbar">
-        <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
-        <Link to="/cart">Cart({shoppingCart.length})</Link>
+	<nav className="navbar ">
+        <Link to="/" className="nav-link">HOME</Link>
+        <Link to="/shop" className="nav-link">SHOP</Link>
+        <Link to="/cart" className="nav-link">CART({shoppingCart.length})</Link>
    </nav>
    )
 }

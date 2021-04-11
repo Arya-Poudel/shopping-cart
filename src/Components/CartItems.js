@@ -30,16 +30,16 @@ const CartItem = (props) =>{
 	return(
 		<div className="cart-items">
 			<img src= {cartItem.src} alt = {cartItem.src} />
-			<div>
+			<div className="cart-items-desc">
 				<p>{cartItem.name}</p>
 				<p>Nrs. {cartItem.price}</p>
 				<div className="quantity">
-					<span className="material-icons-outlined" onClick={decreaseQuantity}>remove_circle</span>
+					<span className="material-icons-outlined inc-dec"  onClick={decreaseQuantity}>remove_circle</span>
 					<p>Quantity: {quantity} </p>
-					<span className="material-icons-outlined" onClick={increaseQuantity}>add_circle</span>
+					<span className="material-icons-outlined inc-dec" onClick={increaseQuantity}>add_circle</span>
 				</div>
 				<p>Subtotal: {subtotal}</p>
-				<button onClick={deleteItem}>Remove item</button>
+				<button onClick={deleteItem} className="remove-from-cart">Remove item</button>
 			</div>
 		</div>
 	)
