@@ -2,4 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Multiple page project using react-router.
 
-View at [Shopping Cart] (https://arya-poudel.github.io/shopping-cart/#/)
+View at [Shopping Cart](https://arya-poudel.github.io/shopping-cart/#/)
